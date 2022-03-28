@@ -1,8 +1,24 @@
 #!/bin/bash
 #Koosta script, mis valjastab kasutajale tervitust  ^`^|Tere, kasutajanimi ! ^$
-#echo "Tere kasutajanimi!"
-# Yl1
-# $User naitab kasutajat kes praesgu on sees.
-echo -n "Tere,"
-echo `whoami`
+#Koosta script, mis väljastab kasutajale(kellena oled sisse logitud, näiteks user_ile 
+#või root_ule) tervitust “Tere, Kasutajanimi!”.
+echo -n  "Tere, "
+kasutajanimi=`whoami`
+echo -n `whoami | cut -c1 | tr [a-z] [A-Z]`
+echo -n `whoami | cut -c2-`
 echo "!"
+
+
+
+
+
+#Teine varjant oleks nii kohe kirjutada. Aga siis kirjutab kasutajanime väikse tähega. 
+#echo "Tere,`whoami`!"
+
+#Kolmas varjant
+echo -n  "Tere, "
+kasutajanimi=`whoami`
+esit2ht=`whoami | cut -c1 | tr [a-z] [A-Z]`
+fullnimi=`whoami | cut -c2-`
+echo "$esit2ht$fullnimi!"
+
